@@ -1,18 +1,26 @@
 $black: #000;
+$white: #fff;
 $link: #3e92ff;
 
-.header {
+@mixin flex-center($gap: 0, $justify-content: none) {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 2rem 4rem;
+  justify-content: $justify-content;
+  gap: $gap;
+}
+
+.header {
+  @include flex-center(0, space-between);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $white;
+  padding: 1.5rem 6rem;
   border-bottom: 1px solid $black;
   box-shadow: 0px 0px 4px $black;
 
   .header-info {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+    @include flex-center(2rem);
 
     .logo {
       width: 4rem;
@@ -21,6 +29,12 @@ $link: #3e92ff;
   }
   
   .navbar {
+    @include flex-center(1.5rem);
+
+    .main-links {
+      @include flex-center(3rem);
+    }
+
     a {
       color: $link;
       font-weight: 600;
@@ -30,6 +44,12 @@ $link: #3e92ff;
 
     .active {
       text-decoration: underline;
+    }
+
+    .separator {
+      width: 2.25px;
+      height: 1rem;
+      background-color: #acacac;
     }
   }
 }
