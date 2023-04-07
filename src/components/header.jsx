@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import logo from './logo.png';
+import logo from '../logo.png';
 import './header.scss';
 
 const Header = () => (
@@ -10,6 +10,7 @@ const Header = () => (
     </div>
 
     <nav className="navbar">
+      <NavLink to="/rockets">Rockets</NavLink>
       <NavLink to="/profile">My profile</NavLink>
     </nav>
   </header>
