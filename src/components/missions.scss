@@ -1,0 +1,43 @@
+$border-color: rgb(175, 175, 175);
+
+.mission-container {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.mission-table {
+  border-collapse: collapse;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+.mission-tr {
+  // border: 1px solid grey;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.mission-tr th {
+  border: 1px solid $border-color; 
+  padding: 10px;
+}
+
+.mission-item-tr {
+  font-weight: normal;
+}
+
+.mission-item-tr th {
+  padding: 10px;
+  border: 1px solid $border-color; 
+}
+
+.mission-item-tr:nth-child(even) {
+  background-color: rgb(235, 235, 235);
+}
+
+.mission-item-description {
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-align: left;
+}
