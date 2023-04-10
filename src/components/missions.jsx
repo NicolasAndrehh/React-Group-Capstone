@@ -1,17 +1,19 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { getMissionsFromAPI } from '../Redux/missions';
+import getMissions from '../Redux/Missions/missionsActions';
 
 const Missions = () => {
-  useSelector((state) => state.missions);
+  const missions = useSelector((state) => state.missions.missions);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getMissionsFromAPI());
-  }, [dispatch]);
+    dispatch(getMissions());
+  }, []);
+
+  console.log(missions);
 
   return (
-    <div />
+    <h1>Missions</h1>
   );
 };
 
