@@ -1,17 +1,37 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { getMissionsFromAPI } from '../Redux/missions';
+import getMissions from '../Redux/Missions/missionsActions';
+import MissionItem from './MissionItem';
 
 const Missions = () => {
-  useSelector((state) => state.missions);
+  const missions = useSelector((state) => state.missions.missions);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getMissionsFromAPI());
-  }, [dispatch]);
+    dispatch(getMissions());
+  }, []);
 
   return (
-    <div />
+    <>
+      <div className="mission-container">
+        <hr />
+        <table className="mission-table">
+          <tr className="mission-tr">
+            <th className="mission-bold">Missions</th>
+            <th className="mission-bold">Description</th>
+            <th className="mission-bold">Status</th>
+            <th>{' '}</th>
+          </tr>
+          {missions.map((mission) => (
+            <MissionItem
+              name={mission.mission_name}
+              description={mission.description}
+              key={mission.mission_id}
+            />
+          ))}
+        </table>
+      </div>
+    </>
   );
 };
 
