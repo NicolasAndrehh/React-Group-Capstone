@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { cancelReservation, reserveRocket } from '../Redux/Rockets/rocketsSlice';
 
 const Rocket = ({
-  id, name, type, img, reserved = false,
+  id, name, description, img, reserved = false,
 }) => {
   const dispatch = useDispatch();
 
@@ -19,7 +19,7 @@ const Rocket = ({
         <h3>{name}</h3>
         <p>
           {reserved && <span className="reserved-badge">Reserved</span>}
-          {type}
+          {description}
         </p>
         {
           reserved
@@ -38,7 +38,7 @@ Rocket.defaultProps = {
 Rocket.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
   reserved: PropTypes.bool,
 };
