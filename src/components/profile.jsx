@@ -12,11 +12,15 @@ const Profile = () => {
       </div>
       <div className="rockets-side">
         <h2>My Rockets</h2>
-        <div className="rockets">
-          {rockets.filter((rocket) => rocket.reserved === true).map((rocket) => (
-            <p key={rocket.id}>{rocket.rocket_name}</p>
-          ))}
-        </div>
+        {rockets.some((rocket) => rocket.reserved === true) ? (
+          <div className="rockets">
+            {rockets.filter((rocket) => rocket.reserved === true).map((rocket) => (
+              <p key={rocket.id}>{rocket.rocket_name}</p>
+            ))}
+          </div>
+        ) : (
+          <p>No rockets reserved yet.</p>
+        )}
       </div>
     </section>
   );

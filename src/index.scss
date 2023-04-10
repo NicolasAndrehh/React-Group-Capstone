@@ -19,3 +19,13 @@ main {
   flex-direction: column;
   gap: 2rem;
 }
+
+@media (max-width: 768px) {
+  main {
+    padding: 14rem 6rem 4rem 6rem;
+  }
+
+  .rockets-section {
+    align-items: center;
+  }
+}
