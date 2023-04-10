@@ -11,8 +11,6 @@ const Rockets = () => {
     dispatch(getRockets());
   }, []);
 
-  console.log(rockets);
-
   return (
     <section className="rockets-section">
 
