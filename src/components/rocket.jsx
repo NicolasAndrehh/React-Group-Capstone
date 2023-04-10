@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import './rocket.scss';
 
 const Rocket = ({ name, type, img }) => (
-  <div>
+  <div className="rocket-card">
     <img src={img} alt="" />
-    <div>
+    <div className="rocket-info">
       <h3>{name}</h3>
       <p>{type}</p>
     </div>
