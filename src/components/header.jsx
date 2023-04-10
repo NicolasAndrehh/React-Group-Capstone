@@ -11,7 +11,7 @@ const Header = () => (
 
     <nav className="navbar">
       <div className="main-links">
-        <NavLink to="/rockets">Rockets</NavLink>
+        <NavLink to="/">Rockets</NavLink>
         <NavLink to="/missions">Missions</NavLink>
       </div>
       <div className="separator" />
