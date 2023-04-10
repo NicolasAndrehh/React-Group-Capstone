@@ -19,9 +19,11 @@ const Rockets = () => {
       {rockets.map((rocket) => (
         <Rocket
           key={rocket.id}
+          id={rocket.id}
           name={rocket.rocket_name}
           type={rocket.rocket_type}
           img={rocket.flickr_images[0]}
+          reserved={rocket.reserved}
         />
       ))}
 
