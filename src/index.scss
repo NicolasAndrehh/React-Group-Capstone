@@ -14,3 +14,9 @@ body {
 main {
   padding: 10rem 6rem;
 }
+
+.rockets-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

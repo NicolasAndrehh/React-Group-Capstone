@@ -1,0 +1,15 @@
+.rocket-card {
+  display: flex;
+  gap: 2rem;
+
+  img {
+    width: 20rem;
+    border-radius: 0.25rem;
+  }
+
+  .rocket-info {
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+}
