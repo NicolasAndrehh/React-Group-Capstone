@@ -17,7 +17,10 @@ const Rocket = ({
       <img src={img} alt="" />
       <div className="rocket-info">
         <h3>{name}</h3>
-        <p>{type}</p>
+        <p>
+          {reserved && <span className="reserved-badge">Reserved</span>}
+          {type}
+        </p>
         {
           reserved
             ? <button type="button" className="button cancel-button" onClick={() => dispatch(cancelReservation(id))}>Cancel reservation</button>
