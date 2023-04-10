@@ -1,15 +1,8 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import getRockets from '../Redux/Rockets/actions';
+import { useSelector } from 'react-redux';
 import Rocket from './rocket';
 
 const Rockets = () => {
   const { rockets, isLoading } = useSelector((state) => state.rockets);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getRockets());
-  }, []);
 
   return (
     <section className="rockets-section">
