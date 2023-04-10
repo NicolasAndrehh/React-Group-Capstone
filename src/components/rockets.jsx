@@ -11,6 +11,8 @@ const Rockets = () => {
     dispatch(getRockets());
   }, []);
 
+  console.log(rockets);
+
   return (
     <section className="rockets-section">
 
@@ -19,6 +21,7 @@ const Rockets = () => {
       {rockets.map((rocket) => (
         <Rocket
           key={rocket.id}
+          id={rocket.id}
           name={rocket.rocket_name}
           type={rocket.rocket_type}
           img={rocket.flickr_images[0]}
