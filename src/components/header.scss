@@ -1,0 +1,56 @@
+$black: #000;
+$white: #fff;
+$link: #3e92ff;
+
+@mixin flex-center($gap: 0, $justify-content: none) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify-content;
+  gap: $gap;
+}
+
+.header {
+  @include flex-center(0, space-between);
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $white;
+  padding: 1.5rem 6rem;
+  border-bottom: 1px solid $black;
+  box-shadow: 0 0 4px $black;
+
+  .header-info {
+    @include flex-center(2rem);
+
+    .logo {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  .navbar {
+    @include flex-center(1.5rem);
+
+    .main-links {
+      @include flex-center(3rem);
+    }
+
+    a {
+      color: $link;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: capitalize;
+    }
+
+    .active {
+      text-decoration: underline;
+    }
+
+    .separator {
+      width: 2.25px;
+      height: 1rem;
+      background-color: #acacac;
+    }
+  }
+}
