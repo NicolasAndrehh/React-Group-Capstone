@@ -21,6 +21,14 @@ const rocketsSlice = createSlice({
         state.rockets[rocketIndex] = updatedRocket;
       }
     },
+    cancelReservation: (state, action) => {
+      const id = action.payload;
+      const rocketIndex = state.rockets.findIndex((rocket) => rocket.id === id);
+
+      if (rocketIndex !== -1) {
+        state.rockets[rocketIndex].reserved = false;
+      }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -42,5 +50,5 @@ const rocketsSlice = createSlice({
   },
 });
 
-export const { reserveRocket } = rocketsSlice.actions;
+export const { reserveRocket, cancelReservation } = rocketsSlice.actions;
 export default rocketsSlice.reducer;
