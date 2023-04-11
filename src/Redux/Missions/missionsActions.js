@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-// import { useSelector } from 'react-redux';
 
 const URL = 'https://api.spacexdata.com/v3/missions';
 
