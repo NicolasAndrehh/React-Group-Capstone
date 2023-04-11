@@ -21,12 +21,18 @@ const MissionItem = (props) => {
     <tr className="mission-item-tr">
       <th className="mission-item-bold">{name}</th>
       <th className="mission-item-description">{description}</th>
-      <th><button type="button">NOT A MEMBER</button></th>
       <th>
         {
           reserved
-            ? <button type="button" onClick={() => handleLeaveMission()}>Leave Mission</button>
-            : <button type="button" onClick={() => handleJoinMission()}>Join Mission</button>
+            ? <div className="member-badge active-member">Active Member</div>
+            : <div className="member-badge not-member">NOT A MEMBER</div>
+        }
+      </th>
+      <th>
+        {
+          reserved
+            ? <button type="button" className="button-mission leave-mission" onClick={() => handleLeaveMission()}>Leave Mission</button>
+            : <button type="button" className="button-mission join-mission" onClick={() => handleJoinMission()}>Join Mission</button>
         }
       </th>
     </tr>
