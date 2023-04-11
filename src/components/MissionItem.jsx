@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import './missions.scss';
 import { useDispatch } from 'react-redux';
-import { joinMission } from '../Redux/Missions/missionsSlice';
+import { joinMission, leaveMission } from '../Redux/Missions/missionsSlice';
 
 const MissionItem = (props) => {
   const {
@@ -10,9 +10,11 @@ const MissionItem = (props) => {
   const dispatch = useDispatch();
 
   const handleJoinMission = () => {
-    console.log('dispatched with id: ');
-    console.log(id);
     dispatch(joinMission(id));
+  };
+
+  const handleLeaveMission = () => {
+    dispatch(leaveMission(id));
   };
 
   return (
@@ -23,7 +25,7 @@ const MissionItem = (props) => {
       <th>
         {
           reserved
-            ? <button type="button">Leave Mission</button>
+            ? <button type="button" onClick={() => handleLeaveMission()}>Leave Mission</button>
             : <button type="button" onClick={() => handleJoinMission()}>Join Mission</button>
         }
       </th>
