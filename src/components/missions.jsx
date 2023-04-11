@@ -1,7 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import getMissions from '../Redux/Missions/missionsActions';
+import { useSelector } from 'react-redux';
 import MissionItem from './MissionItem';
 import './missions.scss';
 
