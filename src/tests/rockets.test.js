@@ -8,7 +8,7 @@ import userEvent from '@testing-library/user-event';
 // import Rockets from '../components/rockets/Rockets';
 import missionsSlice from '../Redux/Missions/missionsSlice';
 import rocketsSlice from '../Redux/Rockets/rocketsSlice';
-import Rocket from '../components/rocket';
+import Rockets from '../components/rockets';
 
 const initialState = {
   rockets: [
@@ -28,15 +28,15 @@ const rootReducer = combineReducers({
   missions: missionsSlice,
 });
 const store = configureStore(
-  { reducer: rootReducer, preloadedState: initialState },
-  applyMiddleware(logger),
+  { reducer: rootReducer, initialState: initialState },
+  // applyMiddleware(logger),
 );
 
 describe('Rockets Component', () => {
   it('renders Rocket with name Fast Rocket', () => {
     render(
       <Provider store={store}>
-        <Rocket />
+        <Rockets />
       </Provider>,
     );
 
@@ -47,7 +47,7 @@ describe('Rockets Component', () => {
   it('renders "Reserved" badge if the button was clicked', () => {
     render(
       <Provider store={store}>
-        <Rocket />
+        <Rockets />
       </Provider>,
     );
 
@@ -61,7 +61,7 @@ describe('Rockets Component', () => {
   it('changes button text from Cancel Reservation to Reserve Rocket', () => {
     render(
       <Provider store={store}>
-        <Rocket />
+        <Rockets />
       </Provider>,
     );
 
