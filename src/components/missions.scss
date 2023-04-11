@@ -1,0 +1,79 @@
+$border-color: rgb(175, 175, 175);
+
+.mission-container {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.mission-table {
+  border-collapse: collapse;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+.mission-tr {
+  // border: 1px solid grey;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.mission-tr th {
+  border: 1px solid $border-color;
+  padding: 10px;
+}
+
+.mission-item-tr {
+  font-weight: normal;
+}
+
+.mission-item-tr th {
+  padding: 10px;
+  border: 1px solid $border-color;
+}
+
+.mission-item-tr:nth-child(even) {
+  background-color: rgb(235, 235, 235);
+}
+
+.mission-item-description {
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-align: left;
+}
+
+.member-badge {
+  border: none;
+  border-radius: 4px;
+  background-color: #6d757d;
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: white;
+  width: max-content;
+  padding: 5px;
+}
+
+.active-member {
+  background-color: #18a2b8;
+}
+
+.button-mission {
+  background-color: transparent;
+  border: 1px solid #595f64;
+  border-radius: 6px;
+  width: max-content;
+  padding: 6px;
+  margin: 10px;
+  color: #595f64;
+}
+
+.leave-mission {
+  border: 1px solid red;
+  color: red;
+}
+
+.button-mission:hover {
+  cursor: pointer;
+  color: rgb(60, 150, 90);
+  border: 1px solid rgb(60, 150, 90);
+}
