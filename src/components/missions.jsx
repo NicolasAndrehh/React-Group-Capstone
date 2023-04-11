@@ -7,11 +7,6 @@ import './missions.scss';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missions.missions);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getMissions());
-  }, []);
 
   return (
     <>
