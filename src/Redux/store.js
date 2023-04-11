@@ -1,4 +1,4 @@
-import { configureStore, combineReducers, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import missionsSlice from './Missions/missionsSlice';
 import rocketsSlice from './Rockets/rocketsSlice';
