@@ -17,8 +17,7 @@ const rocketsSlice = createSlice({
       const rocketIndex = state.rockets.findIndex((rocket) => rocket.id === id);
 
       if (rocketIndex !== -1) {
-        const updatedRocket = { ...state.rockets[rocketIndex], reserved: true };
-        state.rockets[rocketIndex] = updatedRocket;
+        state.rockets[rocketIndex].reserved = true;
       }
     },
     cancelReservation: (state, action) => {
