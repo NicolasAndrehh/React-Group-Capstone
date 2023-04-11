@@ -8,7 +8,6 @@ import Profile from './components/profile';
 import Rockets from './components/rockets';
 import Missions from './components/missions';
 import getRockets from './Redux/Rockets/actions';
-import getMissions from './Redux/Missions/missionsActions';
 
 function App() {
   const dispatch = useDispatch();
@@ -16,11 +15,6 @@ function App() {
   // Fecth Rockets once
   useEffect(() => {
     dispatch(getRockets());
-  }, []);
-
-  // Fetch Missions once
-  useEffect(() => {
-    dispatch(getMissions());
   }, []);
 
   return (

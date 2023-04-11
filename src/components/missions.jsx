@@ -1,10 +1,19 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import MissionItem from './MissionItem';
 import './missions.scss';
+import getMissions from '../Redux/Missions/missionsActions';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missions.missions);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (missions.length === 0) {
+      dispatch(getMissions());
+    }
+  }, []);
 
   return (
     <>
